@@ -2,5 +2,12 @@
     <qresource prefix="/">
         <file>imagenes/Cargar.png</file>
         <file>imagenes/salir.png</file>
+        <file>../../9522065_product_icon.png</file>
+        <file>../../1315084_less_minus_icon.png</file>
+        <file>../../4781840_+_add_circle_create_expand_icon.png</file>
+        <file>imagenes/1315084_less_minus_icon.png</file>
+        <file>imagenes/4781840_+_add_circle_create_expand_icon.png</file>
+        <file>imagenes/9522065_product_icon.png</file>
+        <file>imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</file>
     </qresource>
 </RCC>

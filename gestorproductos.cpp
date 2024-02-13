@@ -22,7 +22,28 @@ void GestorProductos::anadirUnidades(int indiceProducto, int unidades)
 {
     if (indiceProducto >= 0 && indiceProducto < m_productos.size()) {
         Producto* producto = m_productos[indiceProducto];
-        producto->setUnidades(producto->unidades() + unidades);
+
+        // Obtener los datos actuales del producto
+        float precioCompraActual = producto->precioCompra();
+        float precioVentaActual = producto->precioVenta();
+        int unidadesActuales = producto->unidades();
+
+        // Calcular el nuevo precio de compra como la media del precio de compra existente
+        // y el nuevo precio de compra
+        float nuevoPrecioCompra = ((precioCompraActual * unidadesActuales) +
+                                   (precioCompraActual * unidades)) /
+                                  (unidadesActuales + unidades);
+
+        // Calcular el nuevo precio de venta como la media del precio de venta existente
+        // y el nuevo precio de compra
+        float nuevoPrecioVenta = ((precioVentaActual * unidadesActuales) +
+                                  (nuevoPrecioCompra * unidades)) /
+                                 (unidadesActuales + unidades);
+
+        // Actualizar los precios y las unidades del producto
+        producto->setPrecioCompra(nuevoPrecioCompra);
+        producto->setPrecioVenta(nuevoPrecioVenta + nuevoPrecioVenta*0.25);
+        producto->setUnidades(unidadesActuales + unidades);
 
         // Obtener la fecha y hora actual
         QDateTime fechaHoraActual = QDateTime::currentDateTime();

@@ -74,7 +74,7 @@
    </property>
    <property name="icon">
     <iconset resource="imagenes.qrc">
-     <normaloff>:/imagenes/Cargar.png</normaloff>:/imagenes/Cargar.png</iconset>
+     <normaloff>:/imagenes/9522065_product_icon.png</normaloff>:/imagenes/9522065_product_icon.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Nuevo Producto</string>
@@ -87,6 +87,10 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="imagenes.qrc">
+     <normaloff>:/imagenes/4781840_+_add_circle_create_expand_icon.png</normaloff>:/imagenes/4781840_+_add_circle_create_expand_icon.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Ingreso</string>
    </property>
@@ -97,6 +101,10 @@
   <action name="action_Egreso">
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="imagenes.qrc">
+     <normaloff>:/imagenes/1315084_less_minus_icon.png</normaloff>:/imagenes/1315084_less_minus_icon.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Egreso</string>
@@ -124,6 +132,10 @@
    </property>
   </action>
   <action name="actionKardex">
+   <property name="icon">
+    <iconset resource="imagenes.qrc">
+     <normaloff>:/imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</normaloff>:/imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</iconset>
+   </property>
    <property name="text">
     <string>Kardex</string>
    </property>
