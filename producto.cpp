@@ -83,6 +83,7 @@ QVector<QPair<QDateTime, Producto>> Producto::obtenerHistorial() const {
     return m_historial;
 }
 
+
 void Producto::agregarRegistro(const QDateTime &fechaHora) {
     m_historial.append(qMakePair(fechaHora, *this));
 }

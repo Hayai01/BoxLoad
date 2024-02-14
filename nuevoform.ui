@@ -84,7 +84,7 @@
    <item row="1" column="0">
     <widget class="QPushButton" name="anadirButton">
      <property name="text">
-      <string>Anadir</string>
+      <string>Anadir Unidades</string>
      </property>
     </widget>
    </item>

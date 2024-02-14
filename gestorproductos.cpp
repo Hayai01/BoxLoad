@@ -67,11 +67,14 @@ void GestorProductos::eliminarUnidades(int indiceProducto, int unidades)
     }
 }
 
-QVector<QPair<QDateTime, Producto>> GestorProductos::historial(int indiceProducto) const {
-    QVector<QPair<QDateTime, Producto>> historialProducto;
+QQueue<QPair<QDateTime, Producto>> GestorProductos::historial(int indiceProducto) const {
+    QQueue<QPair<QDateTime, Producto>> historialProducto;
 
     if (indiceProducto >= 0 && indiceProducto < m_productos.size()) {
-        historialProducto = m_productos[indiceProducto]->obtenerHistorial();
+        QVector<QPair<QDateTime, Producto>> historialVector = m_productos[indiceProducto]->obtenerHistorial().toVector();
+        for (const auto &registro : historialVector) {
+            historialProducto.enqueue(registro);
+        }
     }
 
     return historialProducto;

@@ -1,5 +1,6 @@
 #include "nuevoproductoform.h"
 #include "ui_nuevoproductoform.h"
+#include <QMessageBox>
 
 NuevoProductoForm::NuevoProductoForm(QWidget *parent, GestorProductos *gestorProductos) :
     QWidget(parent),
@@ -24,15 +25,28 @@ void NuevoProductoForm::on_pushButton_released()
     QString SKU = ui->skuLineEdit->text();
     QString name = ui->nameLineEdit->text();
     QString description = ui->descriptionTextEdit->toPlainText();
-    float sellingPrice = ui->sellingPriceLineEdit->text().toFloat();
-    float purchasePrice = ui->purchaseLineEdit->text().toFloat();
-    int units = ui->unitsLineEdit->text().toInt();
+    float sellingPrice = ui->sellingPriceSpinBox->value();
+    float purchasePrice = ui->purchasePriceSpinBox->value();
+    int units = ui->unitsSpinBox->value();
+
+    if (SKU.isEmpty() || name.isEmpty() || description.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Por favor, complete todos los campos.");
+        return;
+    }
+    if (sellingPrice <= 0 || purchasePrice <= 0 || units <= 0) {
+        QMessageBox::warning(this, "Error", "Los precios y unidades deben ser mayores que cero.");
+        return;
+    }
 
     Producto *p = new Producto(SKU, name, description, sellingPrice, purchasePrice, units);
+
+
 
     if (m_gestorProductos) {
         m_gestorProductos->agregarProducto(*p);
         qDebug() << "Producto agregado al GestorProductos";
+
+
     } else {
         qDebug() << "Error: GestorProductos no está inicializado";
     }

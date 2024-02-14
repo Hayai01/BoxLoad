@@ -17,8 +17,7 @@ SOURCES += \
     nuevoproductoform.cpp \
     pantallaprincipal.cpp \
     pedidospendientesform.cpp \
-    producto.cpp \
-    proveedor.cpp
+    producto.cpp
 
 HEADERS += \
     egresoform.h \
@@ -28,8 +27,7 @@ HEADERS += \
     nuevoproductoform.h \
     pantallaprincipal.h \
     pedidospendientesform.h \
-    producto.h \
-    proveedor.h
+    producto.h
 
 FORMS += \
     egresoform.ui \

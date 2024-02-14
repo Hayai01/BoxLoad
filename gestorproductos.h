@@ -4,6 +4,9 @@
 #include <QVector>
 #include <QTime>
 #include "producto.h"
+#include <QQueue>
+
+using namespace std;
 
 class GestorProductos {
 public:
@@ -13,7 +16,9 @@ public:
     const QVector<Producto*>& obtenerProductos() const;
     void anadirUnidades(int indiceProducto, int unidades);
     void eliminarUnidades(int indiceProducto, int unidades);
-     QVector<QPair<QDateTime, Producto>> historial(int indiceProducto) const;
+    QQueue<QPair<QDateTime, Producto>> historial(int indiceProducto) const;
+    // Modificado
+
 
 private:
     QVector<Producto*> m_productos;

@@ -1,7 +1,6 @@
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
-#include "proveedor.h"
 #include <QString>
 #include <QTime>
 #include <stack>
@@ -26,15 +25,8 @@ public:
     int unidades() const;
     void setUnidades(int newUnidades);
     QString mostrarInformacion() const;
-
-    void agregarProveedor(const Proveedor& proveedor); // Método para agregar un proveedor a la pila
-    Proveedor& obtenerProveedor(); // Método para obtener el proveedor en la cima de la pila
-    void eliminarProveedor(); // Método para eliminar el proveedor en la cima de la pila
-    bool pilaProveedoresVacia(); // Método para verificar si la pila de proveedores está vacía
-
-
-    QVector<QPair<QDateTime, Producto>> obtenerHistorial() const; // Obtener el historial del producto
-    void agregarRegistro(const QDateTime &fechaHora); // Agregar un registro al historial
+    void agregarRegistro(const QDateTime &fechaHora);
+    QVector<QPair<QDateTime, Producto>> obtenerHistorial() const;
 
 private:
     QString m_SKU;
@@ -43,8 +35,6 @@ private:
     float m_precioVenta;
     float m_precioCompra;
     int m_unidades;
-
-    std::stack<Proveedor> m_pilaProveedores;
 
     QVector<QPair<QDateTime, Producto>> m_historial;
 

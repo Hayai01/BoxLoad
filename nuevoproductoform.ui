@@ -6,33 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>471</width>
-    <height>383</height>
+    <width>468</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>340</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Add Product</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="widget" native="true">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>371</width>
-     <height>311</height>
+     <width>361</width>
+     <height>371</height>
     </rect>
    </property>
    <widget class="QWidget" name="layoutWidget">
@@ -86,17 +73,8 @@
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="unitsLineEdit"/>
-     </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="nameLineEdit"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="purchaseLineEdit"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="sellingPriceLineEdit"/>
      </item>
      <item row="5" column="0">
       <widget class="QLabel" name="unitsLabel">
@@ -105,7 +83,29 @@
        </property>
       </widget>
      </item>
+     <item row="5" column="1">
+      <widget class="QSpinBox" name="unitsSpinBox"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QDoubleSpinBox" name="sellingPriceSpinBox"/>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="purchasePriceSpinBox"/>
+     </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>320</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Añadir Producto</string>
+    </property>
    </widget>
   </widget>
  </widget>

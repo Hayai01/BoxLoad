@@ -15,6 +15,7 @@ class PantallaPrincipal : public QMainWindow
 public:
     PantallaPrincipal(QWidget *parent = nullptr);
     ~PantallaPrincipal();
+    void cargarDatos();
 
 private slots:
     void on_action_Nuevo_Producto_triggered();
