@@ -6,6 +6,7 @@
 #include "nuevoform.h"
 #include "egresoform.h"
 #include "kardexform.h"
+#include "pedidospendientesform.h"
 
 
 PantallaPrincipal::PantallaPrincipal(QWidget *parent)
@@ -63,5 +64,14 @@ void PantallaPrincipal::on_actionKardex_triggered()
     kardexForm->setWindowModality(Qt::ApplicationModal);
     kardexForm->setWindowTitle("Kardex de Producto");
     kardexForm->show();
+}
+
+
+void PantallaPrincipal::on_actionPedidos_triggered()
+{
+    PedidosPendientesForm *pedidosPendientesForm = new PedidosPendientesForm(nullptr, m_gestorProductos);
+    pedidosPendientesForm->setWindowModality(Qt::ApplicationModal);
+    pedidosPendientesForm->setWindowTitle("Pedidos Pendientes");
+    pedidosPendientesForm->show();
 }
 

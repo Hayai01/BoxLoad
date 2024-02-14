@@ -16,7 +16,9 @@ SOURCES += \
     nuevoform.cpp \
     nuevoproductoform.cpp \
     pantallaprincipal.cpp \
-    producto.cpp
+    pedidospendientesform.cpp \
+    producto.cpp \
+    proveedor.cpp
 
 HEADERS += \
     egresoform.h \
@@ -25,14 +27,17 @@ HEADERS += \
     nuevoform.h \
     nuevoproductoform.h \
     pantallaprincipal.h \
-    producto.h
+    pedidospendientesform.h \
+    producto.h \
+    proveedor.h
 
 FORMS += \
     egresoform.ui \
     kardexform.ui \
     nuevoform.ui \
     nuevoproductoform.ui \
-    pantallaprincipal.ui
+    pantallaprincipal.ui \
+    pedidospendientesform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

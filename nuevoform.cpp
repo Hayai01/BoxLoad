@@ -38,6 +38,7 @@ void NuevoForm::cargarDatos()
             ui->unidadesExistentesLabel->setText("Unidades existentes: N/A");
         }
     });
+
 }
 
 void NuevoForm::on_anadirButton_released()

@@ -29,7 +29,7 @@ KardexForm::~KardexForm()
 void KardexForm::cargarDatos()
 {
     // Obtener la lista de productos desde el GestorProductos
-    const QVector<Producto*>& productos = m_gestorProductos->obtenerProductos();
+    const QList<Producto*>& productos = m_gestorProductos->obtenerProductos();
 
     // Agregar productos al comboBox en NuevoForm
     for (const Producto* producto : productos) {
@@ -55,9 +55,10 @@ void KardexForm::actualizarHistorial()
         qDebug() << "Producto seleccionado válido.";
 
             // Obtener el historial del producto seleccionado
-            QVector<QPair<QDateTime, Producto>> historial = m_gestorProductos->historial(index);
+        QList<QPair<QDateTime, Producto>> historial = m_gestorProductos->historial(index);
         qDebug() << "Tamaño del historial:" << historial.size();
-                                                   qDebug() << "Historial:";
+                                               qDebug() << "Historial:";
+
             for (const auto& registro : historial) {
                 qDebug() << "Fecha y hora:" << registro.first.toString();
                 qDebug() << "Producto:" << registro.second.nombre();

@@ -50,6 +50,7 @@
     <addaction name="action_Egreso"/>
     <addaction name="actionKardex"/>
     <addaction name="separator"/>
+    <addaction name="actionPedidos"/>
     <addaction name="action_Salir"/>
    </widget>
    <addaction name="menu_Archivo"/>
@@ -138,6 +139,15 @@
    </property>
    <property name="text">
     <string>Kardex</string>
+   </property>
+  </action>
+  <action name="actionPedidos">
+   <property name="icon">
+    <iconset resource="imagenes.qrc">
+     <normaloff>:/imagenes/Cargar.png</normaloff>:/imagenes/Cargar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pedidos</string>
    </property>
   </action>
  </widget>

@@ -27,6 +27,8 @@ private slots:
 
     void on_actionKardex_triggered();
 
+    void on_actionPedidos_triggered();
+
 private:
     Ui::PantallaPrincipal *ui;
     GestorProductos *m_gestorProductos;
