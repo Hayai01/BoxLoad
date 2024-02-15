@@ -29,7 +29,7 @@ KardexForm::~KardexForm()
 void KardexForm::cargarDatos()
 {
     // Obtener la lista de productos desde el GestorProductos
-    const QList<Producto*>& productos = m_gestorProductos->obtenerProductos();
+    const QVector<Producto*>& productos = m_gestorProductos->obtenerProductos();
 
     // Agregar productos al comboBox en NuevoForm
     for (const Producto* producto : productos) {

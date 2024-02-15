@@ -37,10 +37,14 @@ FORMS += \
     pantallaprincipal.ui \
     pedidospendientesform.ui
 
+TRANSLATIONS += \
+BoxLoad_de.ts \
+BoxLoad_fr.ts
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    imagenes.qrc
+    Resources.qrc

@@ -22,19 +22,22 @@
      <rect>
       <x>9</x>
       <y>9</y>
-      <width>501</width>
+      <width>571</width>
       <height>491</height>
      </rect>
     </property>
    </widget>
-   <widget class="QTableWidget" name="tablaProveedores">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>10</y>
-      <width>256</width>
-      <height>491</height>
+      <x>600</x>
+      <y>20</y>
+      <width>191</width>
+      <height>101</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Actualizar Datos</string>
     </property>
    </widget>
   </widget>
@@ -82,6 +85,9 @@
     <bool>false</bool>
    </attribute>
    <addaction name="action_Nuevo_Producto"/>
+   <addaction name="action_Ingreso"/>
+   <addaction name="action_Egreso"/>
+   <addaction name="actionKardex"/>
    <addaction name="action_Salir"/>
   </widget>
   <action name="action_Nuevo_Producto">
@@ -89,7 +95,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/9522065_product_icon.png</normaloff>:/imagenes/9522065_product_icon.png</iconset>
    </property>
    <property name="text">
@@ -104,7 +110,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/4781840_+_add_circle_create_expand_icon.png</normaloff>:/imagenes/4781840_+_add_circle_create_expand_icon.png</iconset>
    </property>
    <property name="text">
@@ -119,7 +125,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/1315084_less_minus_icon.png</normaloff>:/imagenes/1315084_less_minus_icon.png</iconset>
    </property>
    <property name="text">
@@ -131,7 +137,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/salir.png</normaloff>:/imagenes/salir.png</iconset>
    </property>
    <property name="text">
@@ -149,7 +155,7 @@
   </action>
   <action name="actionKardex">
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</normaloff>:/imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</iconset>
    </property>
    <property name="text">
@@ -158,7 +164,7 @@
   </action>
   <action name="actionPedidos">
    <property name="icon">
-    <iconset resource="imagenes.qrc">
+    <iconset resource="Resources.qrc">
      <normaloff>:/imagenes/Cargar.png</normaloff>:/imagenes/Cargar.png</iconset>
    </property>
    <property name="text">
@@ -167,7 +173,7 @@
   </action>
  </widget>
  <resources>
-  <include location="imagenes.qrc"/>
+  <include location="Resources.qrc"/>
  </resources>
  <connections/>
 </ui>

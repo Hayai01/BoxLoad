@@ -15,21 +15,33 @@ PantallaPrincipal::PantallaPrincipal(QWidget *parent)
     , ui(new Ui::PantallaPrincipal)
 {
     ui->setupUi(this);
-    setWindowTitle("");
-    m_gestorProductos = new GestorProductos();
+
+
+    setWindowTitle(tr("Gestión de Productos"));
+        m_gestorProductos = new GestorProductos();
     cargarDatos();
     QStringList headers;
-    headers << "SKU" << "Nombre" << "Descripción" << "Precio de Venta" << "Precio de Compra" << "Unidades";
-    ui->tablaProductos->setColumnCount(headers.size());
+    headers << tr("SKU") << tr("Nombre") << tr("Descripción") << tr("Precio de Venta") << tr("Precio de Compra") << tr("Unidades");
+                                                                                                                    ui->tablaProductos->setColumnCount(headers.size());
     ui->tablaProductos->setHorizontalHeaderLabels(headers);
     ui->tablaProductos->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+
+
+
+
+    this->setStyleSheet(
+        "font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+        "font-size: 14px; /* Tamaño de letra */"
+        "padding: 5px; /* Espaciado interno de 5 píxeles */"
+        "margin: 5px; /* Margen externo de 5 píxeles */"
+        );
 
 
 }
 
 PantallaPrincipal::~PantallaPrincipal()
 {
-     delete m_gestorProductos;
+    delete m_gestorProductos;
     delete ui;
 }
 
@@ -37,7 +49,7 @@ void PantallaPrincipal::cargarDatos()
 {
 
     // Obtener la lista de productos desde el GestorProductos
-    const QList<Producto*>& productosList = m_gestorProductos->obtenerProductos();
+    const QVector<Producto*>& productosList = m_gestorProductos->obtenerProductos();
 
     // Convertir la lista de productos a una pila de productos
     QStack<Producto*> productos;
@@ -78,9 +90,8 @@ void PantallaPrincipal::on_action_Nuevo_Producto_triggered()
 {
     NuevoProductoForm *nuevoProductoForm = new NuevoProductoForm(nullptr, m_gestorProductos);
     nuevoProductoForm->setWindowModality(Qt::ApplicationModal);
-    nuevoProductoForm->setWindowTitle("Ingreso de datos");
+    nuevoProductoForm->setWindowTitle(tr("Ingreso de datos"));
     nuevoProductoForm->show();
-    cargarDatos();
 }
 
 
@@ -94,9 +105,9 @@ void PantallaPrincipal::on_action_Ingreso_triggered()
 {
     NuevoForm *nuevoForm = new NuevoForm(nullptr, m_gestorProductos);
     nuevoForm->setWindowModality(Qt::ApplicationModal);
-    nuevoForm->setWindowTitle("Ingreso de Producto");
+    nuevoForm->setWindowTitle(tr("Ingreso de Producto"));
     nuevoForm->show();
-    cargarDatos();
+
 }
 
 
@@ -104,9 +115,9 @@ void PantallaPrincipal::on_action_Egreso_triggered()
 {
     EgresoForm *egresoForm = new EgresoForm(nullptr, m_gestorProductos);
     egresoForm->setWindowModality(Qt::ApplicationModal);
-    egresoForm->setWindowTitle("Egreso de Producto");
+    egresoForm->setWindowTitle(tr("Egreso de Producto"));
     egresoForm->show();
-    cargarDatos();
+
 }
 
 
@@ -114,9 +125,9 @@ void PantallaPrincipal::on_actionKardex_triggered()
 {
     KardexForm *kardexForm = new KardexForm(nullptr, m_gestorProductos);
     kardexForm->setWindowModality(Qt::ApplicationModal);
-    kardexForm->setWindowTitle("Kardex de Producto");
+    kardexForm->setWindowTitle(tr("Kardex de Producto"));
     kardexForm->show();
-    cargarDatos();
+
 }
 
 
@@ -124,9 +135,14 @@ void PantallaPrincipal::on_actionPedidos_triggered()
 {
     PedidosPendientesForm *pedidosPendientesForm = new PedidosPendientesForm(nullptr, m_gestorProductos);
     pedidosPendientesForm->setWindowModality(Qt::ApplicationModal);
-    pedidosPendientesForm->setWindowTitle("Pedidos Pendientes");
+    pedidosPendientesForm->setWindowTitle(tr("Pedidos Pendientes"));
     pedidosPendientesForm->show();
-    cargarDatos();
+
 }
 
 
+
+void PantallaPrincipal::on_pushButton_released()
+{
+    cargarDatos();
+}

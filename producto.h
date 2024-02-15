@@ -4,6 +4,7 @@
 #include <QString>
 #include <QTime>
 #include <stack>
+#include <QVector>
 
 using namespace std;
 

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imagenes/1315084_less_minus_icon.png</file>
+        <file>imagenes/4634998_chart_analytics_dashboard_graphic_icon.png</file>
+        <file>imagenes/4781840_+_add_circle_create_expand_icon.png</file>
+        <file>imagenes/9522065_product_icon.png</file>
+        <file>imagenes/Cargar.png</file>
+        <file>imagenes/salir.png</file>
+        <file>BoxLoad_de.qm</file>
+        <file>BoxLoad_fr.qm</file>
+    </qresource>
+</RCC>

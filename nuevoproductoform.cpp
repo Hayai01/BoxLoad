@@ -30,28 +30,30 @@ void NuevoProductoForm::on_pushButton_released()
     int units = ui->unitsSpinBox->value();
 
     if (SKU.isEmpty() || name.isEmpty() || description.isEmpty()) {
-        QMessageBox::warning(this, "Error", "Por favor, complete todos los campos.");
+        QMessageBox::warning(this, tr("Error"), tr("Por favor, complete todos los campos."));
         return;
     }
     if (sellingPrice <= 0 || purchasePrice <= 0 || units <= 0) {
-        QMessageBox::warning(this, "Error", "Los precios y unidades deben ser mayores que cero.");
+        QMessageBox::warning(this, tr("Error"), tr("Los precios y unidades deben ser mayores que cero."));
         return;
+    }
+
+    const QVector<Producto*>& productos = m_gestorProductos->obtenerProductos();
+    for (const Producto* producto : productos) {
+        if (producto->SKU() == SKU || producto->nombre() == name) {
+            QMessageBox::warning(this, tr("Error"), tr("Ya existe un producto con el mismo nombre o SKU."));
+            return;
+        }
     }
 
     Producto *p = new Producto(SKU, name, description, sellingPrice, purchasePrice, units);
 
-
-
     if (m_gestorProductos) {
         m_gestorProductos->agregarProducto(*p);
         qDebug() << "Producto agregado al GestorProductos";
-
-
     } else {
         qDebug() << "Error: GestorProductos no está inicializado";
     }
 
-
     this->close();
 }
-

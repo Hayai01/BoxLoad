@@ -12,6 +12,13 @@ class PedidosPendientesForm : public QWidget
 {
     Q_OBJECT
 
+
+struct Pedido {
+    QString producto;
+    int unidades;
+    float costo;
+};
+
 public:
     explicit PedidosPendientesForm(QWidget *parent = nullptr,GestorProductos *gestorProductos = nullptr);
     ~PedidosPendientesForm();
@@ -22,6 +29,7 @@ private slots:
 
 private:
     Ui::PedidosPendientesForm *ui;
+    QVector<Pedido> pedidosPendientes;
     GestorProductos *m_gestorProductos;
 };
 

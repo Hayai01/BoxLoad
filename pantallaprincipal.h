@@ -30,6 +30,8 @@ private slots:
 
     void on_actionPedidos_triggered();
 
+    void on_pushButton_released();
+
 private:
     Ui::PantallaPrincipal *ui;
     GestorProductos *m_gestorProductos;

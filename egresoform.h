@@ -17,7 +17,8 @@ public:
     ~EgresoForm();
 
 private slots:
-    void on_pushButton_released();
+
+    void on_eliminarButton_released();
 
 private:
     Ui::EgresoForm *ui;

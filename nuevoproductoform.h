@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "gestorproductos.h"
+#include <QtDebug>
 
 namespace Ui {
 class NuevoProductoForm;
